@@ -1,12 +1,10 @@
+"use client";
+
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
-
-export const metadata = {
-  title: "Contact Us | Aar Kay Electronics",
-  description: "Visit our store in Zirakpur or contact us on WhatsApp. We serve Zirakpur, Mohali, Panchkula, Chandigarh & Pan India.",
-};
 
 const WHATSAPP = "919999999999";
 
@@ -35,6 +33,17 @@ const outlets = [
 ];
 
 export default function ContactPage() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
+    const city = (form.elements.namedItem("city") as HTMLInputElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+    const text = `Hi Aar Kay!%0A%0AName: ${name}%0APhone: ${phone}%0ACity: ${city}%0AMessage: ${message}`;
+    window.open(`https://wa.me/${WHATSAPP}?text=${text}`, "_blank");
+  };
+
   return (
     <>
       <Header />
@@ -134,19 +143,7 @@ export default function ContactPage() {
                 Form fill karein — we&apos;ll redirect you to WhatsApp with your details.
               </p>
             </div>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.target as HTMLFormElement;
-                const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-                const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
-                const city = (form.elements.namedItem("city") as HTMLInputElement).value;
-                const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
-                const text = `Hi Aar Kay!%0A%0AName: ${name}%0APhone: ${phone}%0ACity: ${city}%0AMessage: ${message}`;
-                window.open(`https://wa.me/${WHATSAPP}?text=${text}`, "_blank");
-              }}
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <input name="name" required placeholder="Your Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal" />
                 <input name="phone" required type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal" />
