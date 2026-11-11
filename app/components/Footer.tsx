@@ -25,7 +25,7 @@ const YoutubeIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
-const WHATSAPP = "919999999999";
+const WHATSAPP = "917888847774";
 
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
@@ -44,7 +44,7 @@ export default function Footer() {
           </h3>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" className="bg-white text-navy font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition">WhatsApp Us</a>
-            <a href="tel:+919999999999" className="bg-navy text-white font-bold py-3 px-8 rounded-full hover:bg-teal transition">Call Now</a>
+            <a href="tel:917888847774" className="bg-navy text-white font-bold py-3 px-8 rounded-full hover:bg-teal transition">Call Now</a>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function Footer() {
           <h4 className="font-bold font-sora mb-4 text-gold">Contact</h4>
           <ul className="space-y-3 text-sm text-gray-300">
             <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>Zirakpur, Mohali, Panchkula — Punjab</span></li>
-            <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+919999999999" className="hover:text-orange">+91 99999 99999</a></li>
+            <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+919999999999" className="hover:text-orange">+91 917888847774</a></li>
             <li className="flex gap-2"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:info@aarkay.com" className="hover:text-orange">info@aarkay.com</a></li>
             <li className="flex gap-2"><Clock size={16} className="text-orange shrink-0 mt-0.5" /><span>Mon – Sat: 9 AM – 7 PM</span></li>
           </ul>

@@ -55,9 +55,10 @@ export default function Achievements() {
           <p className="text-xs text-gray-400 uppercase tracking-widest">Trusted Partners</p>
           <div className="flex flex-wrap gap-6 items-center justify-center">
             <span className="text-white font-bold text-lg">Su-Kam</span>
-            <span className="text-white font-bold text-lg">LG</span>
-            <span className="text-white font-bold text-lg">Luminous</span>
-            <span className="text-white font-bold text-lg">Exide</span>
+            <span className="text-white font-bold text-lg">Mepro Green Energy</span>
+            <span className="text-white font-bold text-lg">Deye</span>
+            <span className="text-white font-bold text-lg">Waaree</span>
+            <span className="text-white font-bold text-lg">Saatvik Solar</span>
           </div>
         </div>
       </div>

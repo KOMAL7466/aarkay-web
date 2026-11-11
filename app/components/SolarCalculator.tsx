@@ -2,27 +2,47 @@
 import { useState } from "react";
 import { Zap, IndianRupee, ArrowRight } from "lucide-react";
 
-export default function SolarCalculator() {
-  const [bill, setBill] = useState(3000);
+const WHATSAPP = "917888847774";
 
-  // Approx logic: 1 kW system generates ~120 units/month, avg rate ₹8/unit
-  const units = Math.round(bill / 8);
-  const systemSize = (units / 120).toFixed(1);
-  const systemSizeNum = parseFloat(systemSize);
+// Aapke chart ke according exact logic mapping
+const getSolarDetails = (bill: number) => {
+  if (bill < 3000) return { size: "1.5", phase: "Single Phase (1P)" };
+  if (bill >= 3000 && bill <= 4500) return { size: "3", phase: "Single Phase (1P)" };
+  if (bill >= 5000 && bill <= 7500) return { size: "5", phase: "Single Phase (1P)" };
+  if (bill >= 8000 && bill <= 11000) return { size: "6", phase: "Three Phase (3P)" };
+  if (bill >= 13000 && bill <= 18000) return { size: "10", phase: "Three Phase (3P)" };
+  if (bill >= 20000 && bill <= 25000) return { size: "15", phase: "Three Phase (3P)" };
+  if (bill >= 27000 && bill <= 30000) return { size: "20", phase: "Three Phase (3P)" };
+  if (bill >= 33000 && bill <= 38000) return { size: "25", phase: "Three Phase (3P)" };
+  if (bill >= 40000 && bill <= 48000) return { size: "30", phase: "Three Phase (3P)" };
+  if (bill >= 51000 && bill <= 60000) return { size: "40", phase: "Three Phase (3P)" };
+  if (bill >= 65000 && bill <= 80000) return { size: "50", phase: "Three Phase (3P)" };
+  if (bill >= 90000 && bill <= 120000) return { size: "70", phase: "Three Phase (3P)" };
+  return { size: "100", phase: "Three Phase (3P)" }; // Above 1,30,000+
+};
+
+export default function SolarCalculator() {
+  const [bill, setBill] = useState(5000);
+
+  const details = getSolarDetails(bill);
+  const systemSizeNum = parseFloat(details.size);
+  
+  // Approx savings logic: 85% of bill can be saved
   const monthlySavings = Math.round(bill * 0.85);
   const yearlySavings = monthlySavings * 12;
-  const co2Saved = Math.round(systemSizeNum * 1.5 * 1000); // kg per year
-  const treesSaved = Math.round(co2Saved / 21); // ~21 kg CO2 per tree/year
+  const co2Saved = Math.round(systemSizeNum * 1.5 * 1000);
+  const treesSaved = Math.round(co2Saved / 21);
 
   return (
-    <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
       <div className="grid md:grid-cols-2">
-        {/* Input */}
+        
+        {/* Input Section */}
         <div className="p-8 md:p-10 bg-gradient-to-br from-navy to-teal text-white">
           <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs mb-4">
             <Zap size={14} className="text-gold" /> Interactive Calculator
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold font-poppins mb-2">
+          <h3 className="text-2xl md:text-3xl font-bold font-sora mb-2">
             Solar Savings Calculator
           </h3>
           <p className="text-sm text-gray-200 mb-8">
@@ -44,38 +64,41 @@ export default function SolarCalculator() {
 
           <input
             type="range"
-            min="500"
-            max="50000"
-            step="500"
+            min="1000"
+            max="150000"
+            step="1000"
             value={bill}
             onChange={(e) => setBill(Number(e.target.value))}
             className="w-full mb-2"
           />
           <div className="flex justify-between text-xs text-gray-300 mb-8">
-            <span>₹500</span>
-            <span>₹50,000</span>
+            <span>₹1,000</span>
+            <span>₹1,50,000+</span>
           </div>
 
           <a
-            href={`https://wa.me/919999999999?text=Hi, my monthly bill is ₹${bill}. Please suggest a solar system.`}
+            href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi Aar Kay, my monthly bill is ₹${bill}. Please suggest a ${details.size}kW solar system.`)}`}
             target="_blank"
-            className="inline-flex items-center gap-2 bg-orange hover:bg-gold text-white font-bold py-3 px-6 rounded-full transition"
+            className="inline-flex items-center gap-2 bg-orange hover:bg-gold text-white font-bold py-3 px-6 rounded-full transition shadow-lg"
           >
             Get Detailed Quote <ArrowRight size={18} />
           </a>
         </div>
 
-        {/* Result */}
+        {/* Result Section */}
         <div className="p-8 md:p-10 bg-sky">
           <h4 className="text-sm font-semibold text-teal uppercase tracking-wider mb-6">
-            Your Recommended System
+            Recommended System
           </h4>
           <div className="mb-6">
-            <p className="text-5xl md:text-6xl font-bold text-navy font-poppins">
-              {systemSize} <span className="text-2xl text-teal">kW</span>
+            <p className="text-5xl md:text-6xl font-bold text-navy font-sora">
+              {details.size} <span className="text-2xl text-teal">kW</span>
             </p>
-            <p className="text-sm text-gray-500 mt-1">
-              Suggested solar system size for ~{units} units/month
+            <div className="mt-2 inline-block bg-navy text-white text-xs font-semibold px-3 py-1 rounded-full">
+              {details.phase}
+            </div>
+            <p className="text-sm text-gray-500 mt-3">
+              Best suited for a bill of ₹{bill.toLocaleString('en-IN')}
             </p>
           </div>
 
@@ -99,7 +122,7 @@ export default function SolarCalculator() {
           </div>
 
           <p className="text-[11px] text-gray-400 leading-relaxed">
-            * Indicative estimate only. Final system size and savings depend on roof space, DISCOM rates, and site survey. Contact our team for an accurate quote.
+            * Indicative estimate only based on AAR KAY ELECTRONICS sizing guide. Final system size and savings depend on roof space, DISCOM rates, and site survey.
           </p>
         </div>
       </div>

@@ -6,27 +6,27 @@ import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 
-const WHATSAPP = "919999999999";
+const WHATSAPP = "917888847774";
 
 const outlets = [
   {
     name: "Zirakpur (Head Office)",
     address: "Shop No. 12, Main Market, Zirakpur, Punjab 140603",
-    phone: "+91 99999 99999",
+    phone: "+91 917888847774",
     hours: "Mon – Sat: 9:00 AM – 7:00 PM",
     mapQuery: "Aar Kay Electronics Zirakpur",
   },
   {
     name: "Mohali Outlet",
     address: "Sector 70, Mohali, Punjab 160071",
-    phone: "+91 99999 99999",
+    phone: "+91 917888847774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
     mapQuery: "Aar Kay Electronics Mohali",
   },
   {
     name: "Panchkula Outlet",
     address: "Sector 11, Panchkula, Haryana 134112",
-    phone: "+91 99999 99999",
+    phone: "+91 917888847774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
     mapQuery: "Aar Kay Electronics Panchkula",
   },
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <Phone size={22} />
               </div>
               <p className="text-xs text-gray-500 mb-1">Call Us</p>
-              <p className="font-semibold text-navy text-sm">+91 99999 99999</p>
+              <p className="font-semibold text-navy text-sm">+917888847774</p>
             </a>
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover-lift transition border border-gray-100">
               <div className="w-12 h-12 rounded-full bg-eco/10 text-eco mx-auto mb-3 flex items-center justify-center">

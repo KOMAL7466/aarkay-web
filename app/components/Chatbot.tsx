@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send, Phone } from "lucide-react";
 
-const WHATSAPP_NUMBER = "919999999999"; // ← Apna number yahan daalein
+const WHATSAPP_NUMBER = "917888847774"; // ← Apna number yahan daalein
 
 type Message = {
   id: number;
