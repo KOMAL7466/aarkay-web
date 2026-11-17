@@ -11,7 +11,6 @@ const navItems = [
   { name: "Installations", href: "/installations" },
   { name: "Customers", href: "/customers" },
   { name: "Loan & Subsidy", href: "/loan-subsidy" },
-  { name: "Service", href: "/service-support" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];

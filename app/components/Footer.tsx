@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock } from "lucide-react"; // Youtube hata diya
+import { MapPin, Phone, Mail, Clock } from "lucide-react"; 
 
 // Custom Brand Icons (SVG)
 const InstagramIcon = ({ size = 16 }: { size?: number }) => (
@@ -44,7 +44,7 @@ export default function Footer() {
           </h3>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" className="bg-white text-navy font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition">WhatsApp Us</a>
-            <a href="tel:917888847774" className="bg-navy text-white font-bold py-3 px-8 rounded-full hover:bg-teal transition">Call Now</a>
+            <a href="tel:+917888847774" className="bg-navy text-white font-bold py-3 px-8 rounded-full hover:bg-teal transition">Call Now</a>
           </div>
         </div>
       </div>
@@ -62,9 +62,16 @@ export default function Footer() {
           </div>
           <p className="text-sm text-gray-300 leading-relaxed mb-4">Trusted Solar & Lithium Experts since 2007. Pan India installations, Su-Kam Super Distributor, and authorized LG outlet.</p>
           <div className="flex gap-3">
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition"><InstagramIcon size={16} /></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition"><FacebookIcon size={16} /></a>
-            <a href="https://youtube.com" target="_blank" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition"><YoutubeIcon size={16} /></a>
+            {/* Updated Social Links */}
+            <a href="https://www.instagram.com/aar_kay_electronics/?hl=en" target="_blank" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition">
+              <InstagramIcon size={16} />
+            </a>
+            <a href="#" target="_blank" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition">
+              <FacebookIcon size={16} />
+            </a>
+            <a href="https://www.youtube.com/@Aarkayelectronics" target="_blank" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition">
+              <YoutubeIcon size={16} />
+            </a>
           </div>
         </div>
 
@@ -88,7 +95,8 @@ export default function Footer() {
             <li><Link href="/installations" className="hover:text-orange transition">Installations</Link></li>
             <li><Link href="/customers" className="hover:text-orange transition">Customers</Link></li>
             <li><Link href="/loan-subsidy" className="hover:text-orange transition">Loan & Subsidy</Link></li>
-            <li><Link href="/service-support" className="hover:text-orange transition">Service Support</Link></li>
+            {/* Service Support replaced with Contact Us as requested */}
+            <li><Link href="/contact" className="hover:text-orange transition">Contact Us</Link></li>
             <li><Link href="/blog" className="hover:text-orange transition">Blog</Link></li>
           </ul>
         </div>
@@ -98,7 +106,7 @@ export default function Footer() {
           <h4 className="font-bold font-sora mb-4 text-gold">Contact</h4>
           <ul className="space-y-3 text-sm text-gray-300">
             <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>Zirakpur, Mohali, Panchkula — Punjab</span></li>
-            <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+919999999999" className="hover:text-orange">+91 917888847774</a></li>
+            <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+917888847774" className="hover:text-orange">+91 78888 47774</a></li>
             <li className="flex gap-2"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:info@aarkay.com" className="hover:text-orange">info@aarkay.com</a></li>
             <li className="flex gap-2"><Clock size={16} className="text-orange shrink-0 mt-0.5" /><span>Mon – Sat: 9 AM – 7 PM</span></li>
           </ul>

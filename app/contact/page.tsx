@@ -8,27 +8,28 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 
 const WHATSAPP = "917888847774";
 
+// Aapke bataye hue naye outlets
 const outlets = [
   {
-    name: "Zirakpur (Head Office)",
-    address: "Shop No. 12, Main Market, Zirakpur, Punjab 140603",
-    phone: "+91 917888847774",
+    name: "Aar Kay Electronics (Main Showroom)",
+    address: "SCO 10, Opposite Motia Huys, Peer Muchalla, Distt. Mohali, Punjab",
+    phone: "+91 78888 47774",
     hours: "Mon – Sat: 9:00 AM – 7:00 PM",
-    mapQuery: "Aar Kay Electronics Zirakpur",
+    mapQuery: "Aar Kay Electronics Peer Muchalla Mohali",
   },
   {
-    name: "Mohali Outlet",
-    address: "Sector 70, Mohali, Punjab 160071",
-    phone: "+91 917888847774",
+    name: "Mepro Green Energy",
+    address: "Basement & Ground Floor, Peer Muchalla, Mohali, Punjab",
+    phone: "+91 78888 47774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
-    mapQuery: "Aar Kay Electronics Mohali",
+    mapQuery: "Mepro Green Energy Peer Muchalla",
   },
   {
-    name: "Panchkula Outlet",
-    address: "Sector 11, Panchkula, Haryana 134112",
-    phone: "+91 917888847774",
+    name: "Aar Kay Electronics (Branch)",
+    address: "SCO 4 & 5, MVDC, Barwala, Panchkula, Haryana 134118",
+    phone: "+91 78888 47774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
-    mapQuery: "Aar Kay Electronics Panchkula",
+    mapQuery: "Aar Kay Electronics Barwala Panchkula",
   },
 ];
 
@@ -67,12 +68,12 @@ export default function ContactPage() {
         {/* Quick contact cards */}
         <section className="py-12 px-4 bg-white -mt-10 relative z-10">
           <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-4">
-            <a href={`tel:+919999999999`} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover-lift transition border border-gray-100">
+            <a href={`tel:+917888847774`} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover-lift transition border border-gray-100">
               <div className="w-12 h-12 rounded-full bg-orange/10 text-orange mx-auto mb-3 flex items-center justify-center">
                 <Phone size={22} />
               </div>
               <p className="text-xs text-gray-500 mb-1">Call Us</p>
-              <p className="font-semibold text-navy text-sm">+917888847774</p>
+              <p className="font-semibold text-navy text-sm">+91 78888 47774</p>
             </a>
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover-lift transition border border-gray-100">
               <div className="w-12 h-12 rounded-full bg-eco/10 text-eco mx-auto mb-3 flex items-center justify-center">
@@ -102,8 +103,8 @@ export default function ContactPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {outlets.map((o) => (
-                <div key={o.name} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition">
-                  <div className="h-40 bg-navy relative">
+                <div key={o.name} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition flex flex-col">
+                  <div className="h-48 bg-navy relative">
                     <iframe
                       src={`https://www.google.com/maps?q=${encodeURIComponent(o.mapQuery)}&output=embed`}
                       className="w-full h-full border-0"
@@ -111,9 +112,9 @@ export default function ContactPage() {
                       title={o.name}
                     />
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col flex-1">
                     <h3 className="font-sora font-bold text-navy mb-3">{o.name}</h3>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-gray-600 mb-4 flex-1">
                       <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /> {o.address}</li>
                       <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /> {o.phone}</li>
                       <li className="flex gap-2"><Clock size={16} className="text-orange shrink-0 mt-0.5" /> {o.hours}</li>
@@ -121,7 +122,7 @@ export default function ContactPage() {
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I want to visit ${o.name}. Please share directions.`)}`}
                       target="_blank"
-                      className="mt-4 block text-center bg-eco hover:bg-green-700 text-white text-sm font-semibold py-2 rounded-lg transition"
+                      className="mt-auto block text-center bg-eco hover:bg-green-700 text-white text-sm font-semibold py-2.5 rounded-xl transition"
                     >
                       Get Directions on WhatsApp
                     </a>
@@ -143,17 +144,17 @@ export default function ContactPage() {
                 Form fill karein — we&apos;ll redirect you to WhatsApp with your details.
               </p>
             </div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 bg-sky/50 p-6 md:p-8 rounded-3xl border border-gray-100">
               <div className="grid md:grid-cols-2 gap-4">
-                <input name="name" required placeholder="Your Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal" />
-                <input name="phone" required type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal" />
+                <input name="name" required placeholder="Your Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal bg-white" />
+                <input name="phone" required type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal bg-white" />
               </div>
-              <input name="city" required placeholder="City" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal" />
-              <textarea name="message" rows={4} placeholder="Your Message / Requirement" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal"></textarea>
-              <button type="submit" className="w-full btn-premium text-white font-bold py-3.5 rounded-full">
+              <input name="city" required placeholder="City" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal bg-white" />
+              <textarea name="message" rows={4} placeholder="Your Message / Requirement" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal bg-white"></textarea>
+              <button type="submit" className="w-full btn-premium text-white font-bold py-3.5 rounded-xl text-lg shadow-lg">
                 Send on WhatsApp →
               </button>
-              <p className="text-xs text-gray-400 text-center">
+              <p className="text-xs text-gray-500 text-center mt-2">
                 By submitting, you agree to be contacted via WhatsApp. We never share your data.
               </p>
             </form>

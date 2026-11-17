@@ -12,6 +12,7 @@ import Chatbot from "./components/Chatbot";
 import SectionHeading from "./components/SectionHeading";
 import TrustedPartners from "./components/TrustedPartners";
 
+
 const WHATSAPP = "917888847774"; // Updated Number
 
 const Counter = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
@@ -62,9 +63,14 @@ export default function Home() {
               Power Your Future<br />with <span className="text-gradient-hero">Smart Solar</span><br />& Lithium
             </motion.h1>
 
-            {/* New Line added here */}
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-sm md:text-lg text-white font-semibold mb-4 tracking-widest uppercase relative z-10">
-              — with <span className="text-gold">Aar Kay Electronics</span> & <span className="text-eco">Mepro Green Energy</span>
+            {/* Highlighted Brand Line */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.8, delay: 0.2 }} 
+              className="text-lg md:text-2xl lg:text-3xl font-bold mb-6 tracking-wider uppercase relative z-10 text-white"
+            >
+              <span className="opacity-80">with</span> <span className="text-gold drop-shadow-lg">Aar Kay Electronics</span> <span className="opacity-80">&</span> <span className="text-eco drop-shadow-lg">Mepro Green Energy</span>
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-base md:text-xl font-noto mb-10 text-gray-200 max-w-2xl mx-auto leading-relaxed relative z-10">
@@ -154,7 +160,7 @@ export default function Home() {
               subtitle="Honoured with four prestigious awards by renowned organisations and distinguished personalities." 
             />
             
-                              <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
               {[
                 { src: "/award1.jpg.webp", alt: "HT Millennial Award", isPortrait: false },
                 { src: "/award2.jpg.webp", alt: "Eminence Award", isPortrait: false },
@@ -191,7 +197,7 @@ export default function Home() {
                 "HT Millennial Award 2026 – Presented by Hon’ble Cabinet Minister of Punjab",
                 "Eminence Award 2026 – Presented by Hon’ble Food Minister of Punjab",
                 "Titans of Punjab Award – Presented by Bollywood Celebrity Mr Rahul Dev",
-                "Four-Time Pan India No. 1 Distributor Award – By Su-Kam Director Mr Rajneesh Bansal"
+                "Four-Time Pan India No. 1 Distributor Award – By Respective Su-Kam Director's"
               ].map((award, i) => (
                 <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-md transition-all">
                   <Award className="text-gold shrink-0 mt-1" size={20} />
