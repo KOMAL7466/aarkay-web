@@ -109,7 +109,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-gray-300">
             <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>SCO 10, Opp Motia Huys, Peer Muchalla, Mohali</span></li>
             <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+917888847774" className="hover:text-orange">+91 78888 47774</a></li>
-            <li className="flex gap-2"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:info@aarkay.com" className="hover:text-orange">info@aarkay.com</a></li>
+            <li className="flex gap-2"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:Aarkayindia4u@gmail.com" className="hover:text-orange">Aarkayindia4u@gmail.com</a></li>
             <li className="flex gap-2"><Clock size={16} className="text-orange shrink-0 mt-0.5" /><span>Mon – Sat: 9 AM – 7 PM</span></li>
           </ul>
         </div>

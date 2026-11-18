@@ -7,7 +7,7 @@ const partners = [
   { 
     name: "Su-Kam", 
     tagline: "Powering India", 
-    img: "/Su-Cam.jpeg" 
+    img: "/su-cam.jpeg" 
   },
   { 
     name: "Mepro", 
@@ -15,9 +15,9 @@ const partners = [
     img: "/MeproGreen.webp" 
   },
   { 
-    name: "Deye", 
+    name: "Adani Solar", 
     tagline: "Inverters", 
-    img: "/Deye.webp" 
+    img: "/adani solar.jpeg" 
   },
   { 
     name: "Waaree", 

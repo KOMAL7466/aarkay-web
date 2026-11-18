@@ -87,7 +87,7 @@ export default function ContactPage() {
                 <Mail size={22} />
               </div>
               <p className="text-xs text-gray-500 mb-1">Email Us</p>
-              <p className="font-semibold text-navy text-sm">info@aarkay.com</p>
+              <p className="font-semibold text-navy text-sm">Aarkayindia4u@gmail.com</p>
             </a>
           </div>
         </section>

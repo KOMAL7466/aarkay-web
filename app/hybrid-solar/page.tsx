@@ -13,11 +13,11 @@ export const metadata = {
 const WHATSAPP = "917888847774"; // Updated Number
 
 const products = [
-  { name: "Inbuilt Battery Hybrid", tagline: "All-in-one unit", size: "3–5 kW", img: "/hybrid1.jpeg" },
-  { name: "Hybrid Inverter + Separate Battery", tagline: "Flexible & expandable", size: "3–10 kW", img: "/hybrid2.jpeg" },
-  { name: "Single Phase Hybrid", tagline: "For homes & small shops", size: "3–5 kW", img: "/hybrid3.jpeg" },
-  { name: "Three Phase Hybrid", tagline: "For large homes & offices", size: "5–15 kW", img: "/hybrid4.jpeg" },
-  { name: "Commercial Hybrid", tagline: "Business-grade backup", size: "10–20 kW+", img: "/hybrid5.jpeg" },
+  { name: "Inbuilt Battery Hybrid", tagline: "All-in-one unit", size: "3–5 kW", img: "/HYBRIDE INVERTER-1.png" },
+  { name: "Hybrid Inverter + Separate Battery", tagline: "Flexible & expandable", size: "3–10 kW", img: "/HYBRIDE INVERTER-2.png" },
+  { name: "Single Phase Hybrid", tagline: "For homes & small shops", size: "3–5 kW", img: "/HYBRID INVERTER-3.png" },
+  { name: "Three Phase Hybrid", tagline: "For large homes & offices", size: "5–15 kW", img: "/HYBRIDE INVERTER-4.png" },
+  { name: "Commercial Hybrid", tagline: "Business-grade backup", size: "10–20 kW+", img: "/Hybrid.jpeg" }, // 5th image unchanged
 ];
 
 const faqs = [
@@ -73,7 +73,7 @@ export default function HybridSolarPage() {
               {products.map((p) => (
                 <div key={p.name} className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
                   
-                  {/* Image Box (Fixed) */}
+                  {/* Image Box */}
                   <div className="h-64 bg-gradient-to-b from-sky/50 to-white p-6 relative flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
                     <img

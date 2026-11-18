@@ -135,7 +135,7 @@ export default function Home() {
           <SectionHeading badge="Our Products" title={<>Premium <span className="text-gradient-hero">Solar Ranges</span></>} subtitle="Lithium, Hybrid aur On-Grid — aapki har need ke liye ek perfect solution." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Battery, title: "Lithium Battery", img: "/Lithium.jpeg", href: "/lithium-battery", points: ["Long Life (6000+ Cycles)", "Fast Charging", "Zero Maintenance"] },
+              { icon: Battery, title: "Lithium Battery", img: "/Lithium.jpeg", href: "/lithium-battery", points: ["Long Life (4000+ Cycles)", "Fast Charging", "Zero Maintenance"] },
               { icon: Sun, title: "Hybrid Solar", img: "/Hybrid.jpeg", href: "/hybrid-solar", points: ["Power Backup", "Bill Savings", "Govt. Subsidy Help"] },
               { icon: Zap, title: "On-Grid Solar", img: "/On-Grid.jpeg", href: "/on-grid-solar", points: ["Lowest Cost", "Net Metering", "High ROI"] },
             ].map((p) => (
