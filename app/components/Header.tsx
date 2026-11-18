@@ -8,10 +8,9 @@ const navItems = [
   { name: "Lithium Battery", href: "/lithium-battery" },
   { name: "Hybrid Solar", href: "/hybrid-solar" },
   { name: "On-Grid Solar", href: "/on-grid-solar" },
-  { name: "Installations", href: "/installations" },
-  { name: "Customers", href: "/customers" },
+  { name: "Our Work", href: "/our-work" }, // Merged Installations & Customers
   { name: "Loan & Subsidy", href: "/loan-subsidy" },
-  { name: "About", href: "/about" },
+  { name: "About Us", href: "/about" }, // Moved to More dropdown
   { name: "Contact", href: "/contact" },
 ];
 
@@ -45,21 +44,14 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           
           <Link href="/" className="flex items-center gap-2">
-            {/* Naya ARK Logo */}
             <img src="/ark-logo.png.jpeg" alt="Aar Kay Electronics" className="h-12 w-auto object-contain" 
-              onError={(e) => {
-                // Fallback if image not found
-                e.currentTarget.style.display = 'none';
-              }} 
+              onError={(e) => { e.currentTarget.style.display = 'none'; }} 
             />
-            {/* <div className="leading-tight">
-              <h1 className="text-lg font-bold text-navy font-sora">Aar Kay</h1>
-              <p className="text-[10px] text-teal font-semibold tracking-wider">ELECTRONICS</p>
-            </div> */}
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
-            {navItems.slice(0, 6).map((item) => (
+            {/* Show first 5 items: Home, Lithium, Hybrid, On-Grid, Our Work */}
+            {navItems.slice(0, 5).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -73,7 +65,8 @@ export default function Header() {
                 More <ChevronDown size={14} />
               </button>
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                {navItems.slice(6).map((item) => (
+                {/* Show remaining items: Loan & Subsidy, About Us, Contact */}
+                {navItems.slice(5).map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}

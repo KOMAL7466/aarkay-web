@@ -51,18 +51,21 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Brand */}
+        
+        {/* Brand Column (Logo Added) */}
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange to-gold flex items-center justify-center text-white font-bold">AK</div>
-            <div>
-              <h4 className="font-bold font-sora text-lg">Aar Kay</h4>
-              <p className="text-[10px] text-gold tracking-widest">ELECTRONICS</p>
-            </div>
-          </div>
-          <p className="text-sm text-gray-300 leading-relaxed mb-4">Trusted Solar & Lithium Experts since 2007. Pan India installations, Su-Kam Super Distributor, and authorized LG outlet.</p>
+          <Link href="/" className="inline-block mb-6">
+            <img 
+              src="/ark-logo.png.jpeg" 
+              alt="Aar Kay Electronics Logo" 
+              className="h-14 w-auto object-contain bg-white/10 rounded-lg p-1" 
+              onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+            />
+          </Link>
+          <p className="text-sm text-gray-300 leading-relaxed mb-6">
+            Trusted Solar & Lithium Experts since 2007. Pan India installations, Su-Kam Super Distributor.
+          </p>
           <div className="flex gap-3">
-            {/* Updated Social Links */}
             <a href="https://www.instagram.com/aar_kay_electronics/?hl=en" target="_blank" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-orange flex items-center justify-center transition">
               <InstagramIcon size={16} />
             </a>
@@ -75,37 +78,36 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Products */}
+        {/* Products Column */}
         <div>
           <h4 className="font-bold font-sora mb-4 text-gold">Products</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-3 text-sm text-gray-300">
             <li><Link href="/lithium-battery" className="hover:text-orange transition">Lithium Battery</Link></li>
             <li><Link href="/hybrid-solar" className="hover:text-orange transition">Hybrid Solar</Link></li>
             <li><Link href="/on-grid-solar" className="hover:text-orange transition">On-Grid Solar</Link></li>
-            <li><Link href="/compare" className="hover:text-orange transition">Compare Products</Link></li>
-            <li><Link href="/solar-calculator" className="hover:text-orange transition">Solar Calculator</Link></li>
+            {/* Fixed 404 link */}
+            <li><Link href="/#products" className="hover:text-orange transition">Solar Products</Link></li>
+            <li><Link href="/#calculator" className="hover:text-orange transition">Solar Calculator</Link></li>
           </ul>
         </div>
 
-        {/* Company */}
+        {/* Company Column */}
         <div>
           <h4 className="font-bold font-sora mb-4 text-gold">Company</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-3 text-sm text-gray-300">
             <li><Link href="/about" className="hover:text-orange transition">About Us</Link></li>
-            <li><Link href="/installations" className="hover:text-orange transition">Installations</Link></li>
-            <li><Link href="/customers" className="hover:text-orange transition">Customers</Link></li>
+            <li><Link href="/our-work" className="hover:text-orange transition">Our Work</Link></li>
             <li><Link href="/loan-subsidy" className="hover:text-orange transition">Loan & Subsidy</Link></li>
-            {/* Service Support replaced with Contact Us as requested */}
             <li><Link href="/contact" className="hover:text-orange transition">Contact Us</Link></li>
-            <li><Link href="/blog" className="hover:text-orange transition">Blog</Link></li>
+            {/* Blog removed to fix 404 */}
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* Contact Column */}
         <div>
           <h4 className="font-bold font-sora mb-4 text-gold">Contact</h4>
           <ul className="space-y-3 text-sm text-gray-300">
-            <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>Zirakpur, Mohali, Panchkula — Punjab</span></li>
+            <li className="flex gap-2"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>SCO 10, Opp Motia Huys, Peer Muchalla, Mohali</span></li>
             <li className="flex gap-2"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+917888847774" className="hover:text-orange">+91 78888 47774</a></li>
             <li className="flex gap-2"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:info@aarkay.com" className="hover:text-orange">info@aarkay.com</a></li>
             <li className="flex gap-2"><Clock size={16} className="text-orange shrink-0 mt-0.5" /><span>Mon – Sat: 9 AM – 7 PM</span></li>

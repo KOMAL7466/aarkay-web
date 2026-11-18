@@ -4,15 +4,15 @@ import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
 import FAQSection from "../components/FAQSection";
 import TrustedPartners from "../components/TrustedPartners";
-import { Award, Zap, ShieldCheck, Heart } from "lucide-react";
+import { Award, Zap, ShieldCheck, Heart, FileCheck, Trophy } from "lucide-react";
 
 export const metadata = {
   title: "About Us | Aar Kay Electronics",
   description:
-    "Since 2007, Aar Kay Electronics has been powering homes and businesses across India with trusted solar & lithium solutions. Su-Kam Super Distributor & authorized LG outlet.",
+    "Since 2007, Aar Kay Electronics has been powering homes and businesses across India with trusted solar & lithium solutions. Su-Kam Super Distributor.",
 };
 
-const WHATSAPP = "919999999999";
+const WHATSAPP = "917888847774";
 
 const milestones = [
   { year: "2007", title: "Founded", desc: "Started as a small electronics shop in Zirakpur with a vision to bring reliable power to every home." },
@@ -24,7 +24,7 @@ const milestones = [
 
 const values = [
   { icon: ShieldCheck, title: "Trust", desc: "17+ years of transparent dealing and honest advice." },
-  { icon: Zap, title: "Quality", desc: "Only certified products from top brands like Su-Kam and LG." },
+  { icon: Zap, title: "Quality", desc: "Only certified products from top brands like Su-Kam and Mepro." },
   { icon: Heart, title: "Service", desc: "After-sales support that actually cares." },
   { icon: Award, title: "Excellence", desc: "Recognized as Pan India #1 — a title we earn every day." },
 ];
@@ -32,7 +32,6 @@ const values = [
 const faqs = [
   { q: "When was Aar Kay Electronics founded?", a: "Aar Kay Electronics was established in 2007 in Zirakpur, Punjab. We have been serving the region for over 17 years." },
   { q: "Are you an authorized Su-Kam distributor?", a: "Yes, we are a Super Distributor of Su-Kam products. We were also recognized as Pan India #1 in FY 2023-24." },
-  { q: "Do you sell LG products?", a: "Yes, we are an authorized LG outlet and deal in LG appliances along with solar and lithium products." },
   { q: "How many installations have you done?", a: "We have completed over 1000+ solar installations and 500+ lithium battery installations across multiple states in India." },
   { q: "Which areas do you serve?", a: "Our primary service area includes Zirakpur, Mohali, Panchkula, Chandigarh, and surrounding regions. We also support Pan India projects." },
   { q: "Do you provide after-sales service?", a: "Yes, we offer comprehensive after-sales support including AMC, warranty service, and technical support." },
@@ -43,6 +42,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main>
+        {/* Hero Section */}
         <section className="relative bg-navy py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 aurora opacity-40"></div>
           <div className="max-w-5xl mx-auto relative z-10 text-center text-white">
@@ -58,6 +58,7 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Our Story Section */}
         <section className="py-20 px-4 bg-white">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -72,7 +73,7 @@ export default function AboutPage() {
                   What started in 2007 as a small electronics shop in Zirakpur has grown into one of North India&apos;s most trusted solar and lithium energy partners.
                 </p>
                 <p>
-                  We are proud to be a <strong className="text-navy">Su-Kam Super Distributor</strong> and an <strong className="text-navy">authorized LG outlet</strong>. Our Pan India #1 recognition for FY 2023-24 reflects our commitment to quality and customer service.
+                  We are proud to be a <strong className="text-navy">Su-Kam Super Distributor</strong> and an <strong className="text-navy">ISO 9001:2015 Certified Company</strong>. Our Pan India #1 recognition reflects our commitment to quality and customer service.
                 </p>
                 <p>
                   With 1000+ solar installations and 500+ lithium battery installations, we&apos;ve helped families cut their electricity bills, businesses reduce operational costs, and industries move towards sustainable energy.
@@ -106,6 +107,69 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Certifications & Recognitions Section */}
+        <section className="py-20 px-4 bg-slate-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-block bg-gold/10 text-gold font-semibold text-xs tracking-widest px-3 py-1 rounded-full mb-3">
+                CERTIFICATIONS
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora">
+                Certified & Recognized
+              </h2>
+              <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+                Our commitment to quality is backed by official certifications and industry recognition.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* ISO Certificates */}
+              <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-eco/10 text-eco flex items-center justify-center">
+                    <FileCheck size={20} />
+                  </div>
+                  <h3 className="font-sora font-bold text-navy text-lg">ISO 9001:2015 Certified</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <img src="/iso.webp" alt="ISO Certificate PQC" className="w-full h-64 object-contain rounded-xl shadow-md hover:scale-105 transition-transform duration-300 border border-gray-100 bg-white" />
+                  <img src="/iso2.webp" alt="ISO Certificate INDCS" className="w-full h-64 object-contain rounded-xl shadow-md hover:scale-105 transition-transform duration-300 border border-gray-100 bg-white" />
+                </div>
+              </div>
+
+              {/* Awards & Media */}
+              <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 group flex flex-col items-center">
+                <div className="flex items-center gap-3 mb-6 w-full">
+                  <div className="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center">
+                    <Trophy size={20} />
+                  </div>
+                  <h3 className="font-sora font-bold text-navy text-lg">Awards & Media</h3>
+                </div>
+                
+                {/* Premium Frame for News Image */}
+                <div className="relative w-full max-w-md mx-auto">
+                  {/* Outer glass/gold frame effect */}
+                  <div className="absolute -inset-1.5 bg-gradient-to-tr from-orange via-gold to-teal rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                  
+                  {/* Inner white border with shadow */}
+                  <div className="relative bg-white p-3 rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+                    <img 
+                      src="/news.webp" 
+                      alt="HT Millennial Award News Article" 
+                      className="w-full h-auto max-h-[350px] object-contain rounded-lg hover:scale-[1.02] transition-transform duration-300" 
+                    />
+                  </div>
+                </div>
+                
+                <p className="text-center text-sm text-gray-500 mt-6">
+                  Featured in Hindustan Times for winning the <strong className="text-navy">HT Millennial Award 2026</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
         <section className="py-20 px-4 bg-sky">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -130,6 +194,7 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Journey Timeline Section */}
         <section className="py-20 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -161,6 +226,7 @@ export default function AboutPage() {
 
         <FAQSection items={faqs} title="About Aar Kay — FAQs" />
 
+        {/* CTA Section */}
         <section className="py-16 px-4 bg-gradient-to-r from-orange to-gold text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-sora mb-4">

@@ -20,14 +20,14 @@ const outlets = [
   {
     name: "Mepro Green Energy",
     address: "Basement & Ground Floor, Peer Muchalla, Mohali, Punjab",
-    phone: "+91 78888 47774",
+    phone: "+91  77175-47774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
     mapQuery: "Mepro Green Energy Peer Muchalla",
   },
   {
     name: "Aar Kay Electronics (Branch)",
     address: "SCO 4 & 5, MVDC, Barwala, Panchkula, Haryana 134118",
-    phone: "+91 78888 47774",
+    phone: "+91  78149-47774",
     hours: "Mon – Sat: 10:00 AM – 7:00 PM",
     mapQuery: "Aar Kay Electronics Barwala Panchkula",
   },

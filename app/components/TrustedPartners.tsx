@@ -100,7 +100,7 @@ export default function TrustedPartners() {
         <div className="mt-16 flex flex-wrap justify-center items-center gap-4">
           {[
             "Authorized Su-Kam Super Distributor",
-            "Authorized LG Outlet",
+            "Authorized Mepro Green Energy Distributor",
             "Pan India #1 FY 2023-24"
           ].map((badge, i) => (
             <div key={i} className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100 hover:border-gold/30 hover:shadow-md transition-all">
