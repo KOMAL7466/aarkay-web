@@ -7,7 +7,7 @@ const partners = [
   { 
     name: "Su-Kam", 
     tagline: "Powering India", 
-    img: "/su-cam.jpeg" 
+    img: "/sukam.jpeg" 
   },
   { 
     name: "Mepro", 
