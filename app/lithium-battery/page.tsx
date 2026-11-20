@@ -88,7 +88,7 @@ export default function LithiumBatteryPage() {
 
                     <div className="flex items-center gap-2 mb-4">
                       <span className="bg-sky text-teal text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                        Capacity: {p.size}
+                       {p.size}
                       </span>
                     </div>
 
