@@ -131,34 +131,87 @@ export default function Home() {
         </section>
 
         {/* ═══════════════ PRODUCTS ═══════════════ */}
-        <section className="py-20 px-4 max-w-6xl mx-auto" id="products">
-          <SectionHeading badge="Our Products" title={<>Premium <span className="text-gradient-hero">Solar Ranges</span></>} subtitle="Lithium, Hybrid aur On-Grid — aapki har need ke liye ek perfect solution." />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Battery, title: "Lithium Battery", img: "/Lithium.jpeg", href: "/lithium-battery", points: ["Long Life (4000+ Cycles)", "Fast Charging", "Zero Maintenance"] },
-              { icon: Sun, title: "Hybrid Solar", img: "/Hybrid.jpeg", href: "/hybrid-solar", points: ["Power Backup", "Bill Savings", "Govt. Subsidy Help"] },
-              { icon: Zap, title: "On-Grid Solar", img: "/On-Grid.jpeg", href: "/on-grid-solar", points: ["Lowest Cost", "Net Metering", "High ROI"] },
-            ].map((p) => (
-              <motion.div key={p.title} whileHover={{ y: -8, scale: 1.02 }} transition={{ duration: 0.3 }} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group relative">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange via-gold to-teal"></div>
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange to-gold flex items-center justify-center text-white"><p.icon size={20} /></div>
-                    <h3 className="text-xl font-bold text-navy font-sora">{p.title}</h3>
-                  </div>
-                  <ul className="text-sm text-gray-600 space-y-2 mb-6">
-                    {p.points.map((pt) => (<li key={pt} className="flex items-center gap-2"><span className="text-eco font-bold">✔</span> {pt}</li>))}
-                  </ul>
-                  <a href={p.href} className="block text-center w-full bg-gradient-to-r from-teal to-navy text-white py-2.5 rounded-xl hover:from-navy hover:to-teal transition font-semibold text-sm">View Range</a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+<section className="py-20 px-4 max-w-6xl mx-auto" id="products">
+  <SectionHeading
+    badge="Our Products"
+    title={<>Premium <span className="text-gradient-hero">Solar Ranges</span></>}
+    subtitle="Lithium, Hybrid aur On-Grid — aapki har need ke liye ek perfect solution."
+  />
 
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {[
+      {
+        icon: Battery,
+        title: "Lithium Battery",
+        img: "/Lithium.jpeg",
+        href: "/lithium-battery",
+        points: ["Long Life (4000+ Cycles)", "Fast Charging", "Zero Maintenance"],
+      },
+      {
+        icon: Sun,
+        title: "Hybrid Solar",
+        img: "/Hybrid.jpeg",
+        href: "/hybrid-solar",
+        points: ["Power Backup", "Bill Savings", "Govt. Subsidy Help"],
+      },
+      {
+        icon: Zap,
+        title: "On-Grid Solar",
+        img: "/On-Grid.jpeg",
+        href: "/on-grid-solar",
+        points: ["Lowest Cost", "Net Metering", "High ROI"],
+      },
+      {
+        icon: Battery,
+        title: "Li-Pro+ All-in-One",
+        img: "/Li-Pro.jpeg",
+        href: "/li-pro-series",
+        points: ["Inbuilt Lithium Battery", "Pure Sine Wave", "Smart Power Backup"],
+      },
+    ].map((p) => (
+      <motion.div
+        key={p.title}
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group relative"
+      >
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange via-gold to-teal"></div>
+
+        <div className="h-48 bg-gray-200 relative overflow-hidden">
+          <img
+            src={p.img}
+            alt={p.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange to-gold flex items-center justify-center text-white">
+              <p.icon size={20} />
+            </div>
+            <h3 className="text-xl font-bold text-navy font-sora">{p.title}</h3>
+          </div>
+
+          <ul className="text-sm text-gray-600 space-y-2 mb-6">
+            {p.points.map((pt) => (
+              <li key={pt} className="flex items-center gap-2">
+                <span className="text-eco font-bold">✔</span> {pt}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={p.href}
+            className="block text-center w-full bg-gradient-to-r from-teal to-navy text-white py-2.5 rounded-xl hover:from-navy hover:to-teal transition font-semibold text-sm"
+          >
+            View Range
+          </a>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
         {/* ═══════════════ AWARDS & RECOGNITIONS ═══════════════ */}
         <section className="py-20 px-4 bg-sky">
           <div className="max-w-6xl mx-auto">

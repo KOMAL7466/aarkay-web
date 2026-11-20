@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
 import FAQSection from "../components/FAQSection";
-import { Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { Zap, CheckCircle, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
   title: "On-Grid Solar | Aar Kay Electronics",
@@ -14,11 +14,13 @@ export const metadata = {
 const WHATSAPP = "917888847774"; // Updated Number
 
 const products = [
-  { name: "Single Phase On-Grid", tagline: "For small homes", size: "1–5 kW", img: "/On Grid Inverter-1.png" },
-  { name: "Three Phase On-Grid", tagline: "For large homes & offices", size: "5–20 kW", img: "/On Grid Inverter-2.png" },
-  { name: "Residential Rooftop", tagline: "1-10 kW homes", size: "1–10 kW", img: "/On Grid Inverter-3.png" },
-  { name: "Commercial Rooftop", tagline: "10-20 kW shops/offices", size: "10–20 kW", img: "/On Grid Inverter-4.png" },
-  { name: "Industrial Plant", tagline: "20kW+ factories", size: "20 kW+", img: "/On Grid Inverter-5.png" },
+  { name: "3kW Single Phase On-Grid", tagline: "For small homes", size: "3 kW", img: "/On Grid Inverter-1.png" },
+  { name: "5kW Single Phase On-Grid", tagline: "For medium homes", size: "5 kW", img: "/On Grid Inverter-2.png" },
+  { name: "6kW Three Phase On-Grid", tagline: "For large homes & offices", size: "6 kW", img: "/On Grid Inverter-3.png" },
+  { name: "10kW Three Phase On-Grid", tagline: "Commercial use", size: "10 kW", img: "/On Grid Inverter-4.png" },
+  { name: "15kW Three Phase On-Grid", tagline: "For factories & large spaces", size: "15 kW", img: "/On Grid Inverter-5.png" },
+  // 6th image added (same as 5th) for 20kW
+  { name: "20kW Three Phase On-Grid", tagline: "For large factories", size: "20 kW", img: "/On Grid Inverter-5.png" }, 
 ];
 
 const faqs = [
@@ -56,6 +58,16 @@ export default function OnGridSolarPage() {
             >
               Get Quote on WhatsApp <ArrowRight size={18} />
             </a>
+          </div>
+        </section>
+
+        {/* HIGHLIGHT LINE FOR 100KW */}
+        <section className="bg-navy py-6 px-4 border-b border-white/10">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+            <Sparkles className="text-gold animate-pulse" size={32} />
+            <p className="text-xl md:text-3xl font-bold text-white font-sora tracking-wide">
+              We also have <span className="text-gold text-2xl md:text-4xl drop-shadow-lg">100kW On-Grid</span> systems available for large-scale industries.
+            </p>
           </div>
         </section>
 

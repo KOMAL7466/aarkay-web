@@ -7,17 +7,16 @@ import { Sun, CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Hybrid Solar | Aar Kay Electronics",
-  description: "Hybrid solar systems with battery backup — bill savings + power backup. Single & three phase available.",
+  description: "Hybrid solar systems with battery backup — bill savings + power backup. Single phase available.",
 };
 
-const WHATSAPP = "917888847774"; // Updated Number
+const WHATSAPP = "917888847774";
 
 const products = [
-  { name: "Inbuilt Battery Hybrid", tagline: "All-in-one unit", size: "3–5 kW", img: "/HYBRIDE INVERTER-1.png" },
-  { name: "Hybrid Inverter + Separate Battery", tagline: "Flexible & expandable", size: "3–10 kW", img: "/HYBRIDE INVERTER-2.png" },
-  { name: "Single Phase Hybrid", tagline: "For homes & small shops", size: "3–5 kW", img: "/HYBRID INVERTER-3.png" },
-  { name: "Three Phase Hybrid", tagline: "For large homes & offices", size: "5–15 kW", img: "/HYBRIDE INVERTER-4.png" },
-  { name: "Commercial Hybrid", tagline: "Business-grade backup", size: "10–20 kW+", img: "/Hybrid.jpeg" }, // 5th image unchanged
+  { name: "3kW Hybrid Inverter", tagline: "3kW Hybrid", size: "3 kW", img: "/HYBRIDE INVERTER-1.png" },
+  { name: "5kW Hybrid Inverter", tagline: "5kW Hybrid Single Phase", size: "5 kW", img: "/HYBRIDE INVERTER-2.png" },
+  { name: "6kW Hybrid Inverter", tagline: "6kW Hybrid Single Phase", size: "6 kW", img: "/HYBRID INVERTER-3.png" },
+  { name: "11kW Hybrid Inverter", tagline: "11kW Hybrid Single Phase", size: "11 kW", img: "/HYBRIDE INVERTER-4.png" }
 ];
 
 const faqs = [
@@ -25,7 +24,6 @@ const faqs = [
   { q: "Is hybrid eligible for PM Surya Ghar subsidy?", a: "Not automatically. Subsidy eligibility varies by scheme and DISCOM. Contact us to check your specific case." },
   { q: "How long is the battery backup?", a: "Typically 4-8 hours depending on load and battery capacity. We size the battery based on your critical load." },
   { q: "Can I expand later?", a: "Yes, with separate battery systems you can easily add more capacity later." },
-  { q: "Single phase vs three phase?", a: "Single phase is for homes with normal load. Three phase is for large homes, offices, and businesses with heavy equipment." },
   { q: "What's the payback period?", a: "Typically 4-6 years depending on system size, electricity rates, and usage. Our team can calculate your exact ROI." },
 ];
 
@@ -35,7 +33,7 @@ export default function HybridSolarPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-navy via-navy to-teal py-24 px-4 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-navy via-navy to-teal py-16 md:py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 aurora opacity-40"></div>
           <div className="max-w-4xl mx-auto relative z-10 text-center text-white">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange to-gold mx-auto mb-4 flex items-center justify-center">
@@ -57,10 +55,10 @@ export default function HybridSolarPage() {
           </div>
         </section>
 
-        {/* Products Section */}
-        <section className="py-20 px-4 bg-slate-50">
+        {/* Products Section (Grid fixed for 4 items & spacing reduced) */}
+        <section className="py-12 md:py-16 px-4 bg-slate-50">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-navy font-sora mb-3">
                 Hybrid Solar Range
               </h2>
@@ -69,12 +67,13 @@ export default function HybridSolarPage() {
               </p>
             </div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Changed to lg:grid-cols-4 for exactly 4 items */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map((p) => (
                 <div key={p.name} className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
                   
                   {/* Image Box */}
-                  <div className="h-64 bg-gradient-to-b from-sky/50 to-white p-6 relative flex items-center justify-center overflow-hidden">
+                  <div className="h-56 bg-gradient-to-b from-sky/50 to-white p-4 relative flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
                     <img
                       src={p.img}
@@ -84,14 +83,14 @@ export default function HybridSolarPage() {
                   </div>
                   
                   {/* Content Box */}
-                  <div className="p-6 flex flex-col flex-1 border-t border-gray-50">
-                    <div className="mb-4">
-                      <h3 className="font-sora font-bold text-navy text-lg mb-1 leading-tight">{p.name}</h3>
-                      <p className="text-xs text-orange font-bold mb-3 uppercase tracking-wider">{p.tagline}</p>
+                  <div className="p-5 flex flex-col flex-1 border-t border-gray-50">
+                    <div className="mb-3">
+                      <h3 className="font-sora font-bold text-navy text-base mb-1 leading-tight">{p.name}</h3>
+                      <p className="text-[11px] text-orange font-bold mb-2 uppercase tracking-wider">{p.tagline}</p>
                     </div>
                     
-                    <div className="flex items-center gap-2 mb-6">
-                      <span className="bg-sky text-teal text-xs font-semibold px-3 py-1.5 rounded-md">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="bg-sky text-teal text-[11px] font-semibold px-2.5 py-1 rounded-md">
                         Capacity: {p.size}
                       </span>
                     </div>
@@ -99,7 +98,7 @@ export default function HybridSolarPage() {
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I want a quote for ${p.name} (${p.size}).`)}`}
                       target="_blank"
-                      className="mt-auto block text-center w-full bg-gradient-to-r from-teal to-navy text-white py-3 rounded-xl text-sm font-bold transition-all hover:shadow-lg hover:from-navy hover:to-teal"
+                      className="mt-auto block text-center w-full bg-gradient-to-r from-teal to-navy text-white py-2.5 rounded-xl text-sm font-bold transition-all hover:shadow-lg hover:from-navy hover:to-teal"
                     >
                       Request Quote
                     </a>
@@ -111,9 +110,9 @@ export default function HybridSolarPage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-navy font-sora mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-navy font-sora mb-6">
               Hybrid Benefits
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
@@ -138,10 +137,10 @@ export default function HybridSolarPage() {
         <FAQSection items={faqs} title="Hybrid Solar FAQs" />
 
         {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-orange to-gold text-center">
+        <section className="py-12 md:py-16 px-4 bg-gradient-to-r from-orange to-gold text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-sora mb-4">Ready to Go Hybrid?</h2>
-            <p className="text-white/90 mb-8 text-lg">Get a customized quote for your home or business today.</p>
+            <p className="text-white/90 mb-6 text-lg">Get a customized quote for your home or business today.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" className="bg-white text-navy font-bold py-3.5 px-8 rounded-full hover:bg-gray-100 transition shadow-lg">WhatsApp Us</a>
               <Link href="/contact" className="bg-navy text-white font-bold py-3.5 px-8 rounded-full hover:bg-teal transition shadow-lg">Visit Store</Link>
