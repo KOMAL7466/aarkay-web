@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   },
   description: "Trusted solar & lithium battery experts since 2007. Su-Kam Super Distributor & Mepro Green Energy Partner. 1000+ installations. Get free quote on WhatsApp.",
   keywords: ["solar panel Mohali", "lithium battery Panchkula", "hybrid solar Punjab", "on-grid solar Zirakpur", "Su-Kam dealer", "Aar Kay Electronics"],
+  
+  // Google Search Console Verification Code Added Here
+  verification: {
+    google: "esCW5LtrOIQa5YjepNipKKgCKAsF_VyH2lMdqWS31JU",
+  },
+
   openGraph: {
     title: "Aar Kay Electronics | Smart Solar & Lithium Experts",
     description: "Since 2007 · 1000+ installations · Pan India support.",
