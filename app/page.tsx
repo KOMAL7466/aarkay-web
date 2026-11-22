@@ -115,9 +115,11 @@ export default function Home() {
             </div>
 
             <div className="flex gap-4 items-center justify-center w-full lg:w-1/3 lg:justify-end">
-               <div className="bg-white/10 rounded-xl p-2 backdrop-blur-sm border border-white/10 flex items-center gap-2">
-                  <img src="/19-years.png.webp" alt="19 Years of Trust" className="h-14 w-auto object-contain" onError={(e) => e.currentTarget.style.display='none'} />
+               {/* ISO Certificate Image Added Here */}
+               <div className="flex items-center gap-2">
+                  <img src="/iso.png" alt="ISO Certified" className="h-16 w-auto object-contain drop-shadow-xl" onError={(e) => e.currentTarget.style.display='none'} />
                </div>
+               
                <div className="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10 flex items-center gap-2">
                   <ShieldCheck className="text-eco" size={28} />
                   <div className="text-left leading-tight">
@@ -212,6 +214,7 @@ export default function Home() {
     ))}
   </div>
 </section>
+
         {/* ═══════════════ AWARDS & RECOGNITIONS ═══════════════ */}
         <section className="py-20 px-4 bg-sky">
           <div className="max-w-6xl mx-auto">
