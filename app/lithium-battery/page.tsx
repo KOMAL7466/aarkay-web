@@ -13,10 +13,21 @@ export const metadata = {
 const WHATSAPP = "917888847774";
 
 const products = [
-  { name: "02.56KWH LITHIUM BATTERY", tagline: "", size: "", img: "/lithium1.jpeg" },
-  { name: "5.12KWH LITHIUM BATTERY", tagline: "", size: "", img: "/lithium2.jpeg" },
-  { name: "10.24KWH LITHIUM BATTERY", tagline: "", size: "", img: "/lithium3.jpeg" },
-  { name: "16.07 KWh LITHIUM BATTERY", tagline: "", size: "", img: "/lithium4.jpeg" },
+  { name: "02.56kWh Lithium Battery", tagline: "Compact & Powerful", size: "2.56 kWh", img: "/lithium1.jpeg" },
+  { name: "5.12kWh Lithium Battery", tagline: "Ideal for homes", size: "5.12 kWh", img: "/lithium2.jpeg" },
+  { name: "10.24kWh Lithium Battery", tagline: "For large homes", size: "10.24 kWh", img: "/lithium3.jpeg" },
+  { name: "16.07kWh Lithium Battery", tagline: "Commercial grade", size: "16.07 kWh", img: "/lithium4.jpeg" },
+];
+
+// Naya Specifications Data (General LFP specs)
+const lithiumSpecs = [
+  { feature: "Battery Chemistry", detail: "Lithium Iron Phosphate (LiFePO4)" },
+  { feature: "Cycle Life", detail: "4000+ Cycles (80% DoD)" },
+  { feature: "Nominal Voltage", detail: "51.2 VDC" },
+  { feature: "Operating Temp", detail: "0°C to 50°C (Charge), -10°C to 50°C (Discharge)" },
+  { feature: "Warranty", detail: "5 - 10 Years (Depends on model)" },
+  { feature: "Communication", detail: "RS485 / CAN / Bluetooth (Optional)" },
+  { feature: "Protection", detail: "Smart BMS (Overcharge, Over-discharge, Short Circuit)" },
 ];
 
 const faqs = [
@@ -24,7 +35,6 @@ const faqs = [
   { q: "How long do these batteries last?", a: "Typically 10+ years with proper usage. We provide 5-10 year warranties depending on model." },
   { q: "Are these compatible with my existing inverter?", a: "Most models are compatible with standard hybrid and off-grid inverters. Share your inverter model on WhatsApp and we'll confirm." },
   { q: "Do you provide installation?", a: "Yes, we provide professional installation across Pan India. Installation is usually included in the quote." },
-  { q: "What's the difference between inbuilt and separate battery?", a: "Inbuilt is one integrated unit for easy setup. Separate gives flexibility to expand capacity later." },
 ];
 
 export default function LithiumBatteryPage() {
@@ -70,7 +80,6 @@ export default function LithiumBatteryPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map((p) => (
                 <div key={p.name} className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
-
                   <div className="h-56 bg-gradient-to-b from-sky/50 to-white p-4 relative flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
                     <img
@@ -79,19 +88,16 @@ export default function LithiumBatteryPage() {
                       className="h-full w-auto object-contain relative z-10 group-hover:scale-105 transition-transform duration-500 drop-shadow-md"
                     />
                   </div>
-
                   <div className="p-5 flex flex-col flex-1 border-t border-gray-50">
                     <div className="mb-3">
                       <h3 className="font-sora font-bold text-navy text-base mb-1 leading-tight">{p.name}</h3>
                       <p className="text-[11px] text-orange font-bold mb-2 uppercase tracking-wider">{p.tagline}</p>
                     </div>
-
                     <div className="flex items-center gap-2 mb-4">
                       <span className="bg-sky text-teal text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                       {p.size}
+                       Capacity: {p.size}
                       </span>
                     </div>
-
                     <a
                       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I want a quote for ${p.name} (${p.size}).`)}`}
                       target="_blank"
@@ -106,8 +112,42 @@ export default function LithiumBatteryPage() {
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* NAYA: Technical Specifications Table */}
         <section className="py-12 md:py-16 px-4 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="inline-block bg-navy/10 text-navy font-bold text-xs tracking-widest px-3 py-1 rounded-full mb-3 uppercase">
+                Technical Details
+              </span>
+              <h2 className="text-3xl font-bold text-navy font-sora mb-3">
+                Lithium Battery Specifications
+              </h2>
+              <p className="text-gray-600">Common specifications for our premium LFP battery range.</p>
+            </div>
+            
+            <div className="overflow-hidden shadow-xl rounded-2xl border border-gray-100">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-navy text-white text-sm font-sora">
+                    <th className="p-4 font-semibold border-b border-white/10 w-1/3">Feature</th>
+                    <th className="p-4 font-semibold border-b border-white/10">Details</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white text-sm text-gray-700">
+                  {lithiumSpecs.map((row, idx) => (
+                    <tr key={idx} className={`border-b border-gray-100 ${idx % 2 === 0 ? 'bg-slate-50' : 'bg-white'} hover:bg-sky/30 transition-colors`}>
+                      <td className="p-4 font-semibold text-navy">{row.feature}</td>
+                      <td className="p-4">{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-12 md:py-16 px-4 bg-slate-50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-navy font-sora mb-6">
               Why Choose Our Lithium Batteries?
@@ -121,7 +161,7 @@ export default function LithiumBatteryPage() {
                 "5-10 year warranty",
                 "Pan India installation",
               ].map((point) => (
-                <div key={point} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-gray-100">
+                <div key={point} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                   <CheckCircle size={20} className="text-eco shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-700 font-medium">{point}</p>
                 </div>
