@@ -25,7 +25,7 @@ const lithiumSpecs = [
   { feature: "Cycle Life", detail: "4000+ Cycles (80% DoD)" },
   { feature: "Nominal Voltage", detail: "51.2 VDC" },
   { feature: "Operating Temp", detail: "0°C to 50°C (Charge), -10°C to 50°C (Discharge)" },
-  { feature: "Warranty", detail: "5 - 10 Years (Depends on model)" },
+  { feature: "Warranty", detail: "5 Years (Depends on model)" },
   { feature: "Communication", detail: "RS485 / CAN / Bluetooth (Optional)" },
   { feature: "Protection", detail: "Smart BMS (Overcharge, Over-discharge, Short Circuit)" },
 ];
